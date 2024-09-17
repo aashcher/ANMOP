@@ -1,5 +1,5 @@
-[![en](https://img.shields.io/badge/lang-EN-blue.svg)](https://github.com/aashcher/ANMOP/master/README.md)
-[![ru](https://img.shields.io/badge/lang-RU-green.svg)](https://github.com/aashcher/ANMOP/master/README.ru.md)
+[![en](https://img.shields.io/badge/lang-EN-blue.svg)](https://github.com/aashcher/ANMOP/blob/main/README.md)
+[![ru](https://img.shields.io/badge/lang-RU-green.svg)](https://github.com/aashcher/ANMOP/blob/main/README.ru.md)
 
 # Курс "Аналитические и численные методы в оптике и фотонике"
 

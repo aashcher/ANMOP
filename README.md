@@ -1,5 +1,5 @@
-[![en](https://img.shields.io/badge/lang-EN-blue.svg)](https://github.com/aashcher/ANMOP/README.md)
-[![ru](https://img.shields.io/badge/lang-RU-green.svg)](https://github.com/aashcher/ANMOP/README.ru.md)
+[![en](https://img.shields.io/badge/lang-EN-blue.svg)](https://github.com/aashcher/ANMOP/blob/main/README.md)
+[![ru](https://img.shields.io/badge/lang-RU-green.svg)](https://github.com/aashcher/ANMOP/blob/main/README.ru.md)
 
 # Analytical and Numerical Methods in Optics and Photonics Course (ANMOP)
 
