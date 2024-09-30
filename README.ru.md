@@ -13,10 +13,10 @@
 
 1. [Электроматнитные волны](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%201.%20Электромагнитные%20волны.ipynb)
 2. [Методы S- и Т- матриц](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%202.%20Методы%20S-%20и%20Т-матриц.ipynb)
-3. [Функции Грина](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%203.%20Функции%20Грина%20уравнения%20Гельмгольца.ipynb)
-4. [Резонансы в открытых системах](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%204.%20Резонансы%20в%20открытых%20системах.ipynb)
-5. [Методы расчета полюсов S-матрицы](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%205.%20Методы%20расчета%20полюсов%20и%20нулей.ipynb)
-6. [Задания](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть.%20Задания.ipynb)
+3. [Функции Грина](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%203.%20Функции%20Грина%20уравнения%20Гельмгольца.ipynb)
+4. [Резонансы в открытых системах](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%204.%20Резонансы%20в%20открытых%20системах.ipynb)
+5. [Методы расчета полюсов S-матрицы](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%205.%20Методы%20расчета%20полюсов%20и%20нулей.ipynb)
+6. [Задания](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть.%20Задания.ipynb)
 
 ### Фотонные кристаллы
 
