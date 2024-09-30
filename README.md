@@ -13,11 +13,36 @@ The course is divided into blocks that can be studied relatively independently o
 
 1. [Electromagnetic Waves](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Common%20part%201.%20Electromagnetic%20waves.ipynb)
 2. [S- and T-Matrix Methods]()
+3. [Green's Functions]()
+4. [Resonnces in Open Systems]()
+5. [Methods of Calculation of S-matrix Poles]()
+6. [Tasks]()
 
 ### Photonic Crystals
 
+1. Photonic Crystals: Prperties and Applications
+2. Modal Basis for 1D Crystals
+3. Fourier Space Methods
+4. Tasks
+
 ### Diffraction Gratings and Metasurfaces
+
+1. Gratings: Properties and Applications
+2. Modal Methods
+3. Resonant Properties
+4. Tasks
 
 ### Electromagnetic Scattering
 
+1. Scattering of Electromagnetic Waves: Overview
+2. The Discarete Dipole Approximation and Method of Moments
+3. Waterman T-matrix and the Extended Boundary Condition Method
+4. Multiple Scattering
+5. Tasks
+
 ### Inverse and Optimization Problems
+
+1. Gradient-Based Optimization and the Adjoint Method
+2. Stochastic Optimization
+3. Deep Learning Approaches
+4. Tasks
