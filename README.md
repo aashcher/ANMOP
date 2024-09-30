@@ -12,11 +12,11 @@ The course is divided into blocks that can be studied relatively independently o
 ### Common Part
 
 1. [Electromagnetic Waves](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Common%20part%201.%20Electromagnetic%20waves.ipynb)
-2. [S- and T-Matrix Methods]()
-3. [Green's Functions]()
-4. [Resonnces in Open Systems]()
+2. [S- and T-Matrix Methods](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Common%20part%202.%20S-%20and%20Т-matrix%20methods.ipynb)
+3. [Green's Functions](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Common%20part%203.%20Greens%20functions%20of%20the%20Helholtz%20equation.ipynb)
+4. [Resonnces in Open Systems](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Common%20part%204.%20Resonances%20in%20open%20systems.ipynb)
 5. [Methods of Calculation of S-matrix Poles]()
-6. [Tasks]()
+6. [Tasks](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Common%20part.%20Tasks.ipynb)
 
 ### Photonic Crystals
 
