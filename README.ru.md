@@ -13,36 +13,36 @@
 
 1. [Электроматнитные волны](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%201.%20Электромагнитные%20волны.ipynb)
 2. [Методы S- и Т- матриц](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%202.%20Методы%20S-%20и%20Т-матриц.ipynb)
-3. [Функции Грина](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%203.%20Функции%20Грина%20уравнения%20Гельмгольца.ipynb)
-4. [Резонансы в открытых системах](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%204.%20Резонансы%20в%20открытых%20системах.ipynb)
-5. [Методы расчета полюсов S-матрицы](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%205.%20Методы%20расчета%20полюсов%20и%20нулей.ipynb)
-6. [Задания](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть.%20Задания.ipynb)
+3. [Функции Грина](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%203.%20Функции%20Грина%20уравнения%20Гельмгольца.ipynb)
+4. [Резонансы в открытых системах](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%204.%20Резонансы%20в%20открытых%20системах.ipynb)
+5. [Методы расчета полюсов S-матрицы](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть%205.%20Методы%20расчета%20полюсов%20и%20нулей.ipynb)
+6. [Задания](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Общая%20часть.%20Задания.ipynb)
 
 ### Фотонные кристаллы
 
-1. [Фотонные кристаллы: свойства и приложения](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы%201.%20Общие%20свойства%20и%20приложения.ipynb)
-2. [Модальный базис в одномерном случае](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы%202.%20Модальный%20базис%20в%20одномерном%20случае.ipynb)
-3. [Фурье-методы](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы%203.%20Фурье-метод.ipynb)
-4. [Задания](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы.%20Задания.ipynb)
+1. [Фотонные кристаллы: свойства и приложения](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы%201.%20Общие%20свойства%20и%20приложения.ipynb)
+2. [Модальный базис в одномерном случае](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы%202.%20Модальный%20базис%20в%20одномерном%20случае.ipynb)
+3. [Фурье-методы](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы%203.%20Фурье-метод.ipynb)
+4. [Задания](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Фотонные%20кристаллы.%20Задания.ipynb)
 
 ### Дифракционные решетки
 
-1. [Дифракционные решетки: свойства и приложения](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки%201.%20Общие%20свойства%20и%20приложения.ipynb)
-2. [Модальные методы](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки%202.%20Модальные%20методы.ipynb)
-3. [Резонансные свойства](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки%203.%20Резонансные%20свойства.ipynb)
-4. [Задания](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки.%20Задания.ipynb)
+1. [Дифракционные решетки: свойства и приложения](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки%201.%20Общие%20свойства%20и%20приложения.ipynb)
+2. [Модальные методы](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки%202.%20Модальные%20методы.ipynb)
+3. [Резонансные свойства](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки%203.%20Резонансные%20свойства.ipynb)
+4. [Задания](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Дифракционные%20решетки.%20Задания.ipynb)
 
 ### Рассеяние электромагнитных волн
 
-1. [Рассеяния электромагнитных волн: общие сведения](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%201.%20Общие%20сведения.ipynb)
-2. [Метод дискретных диполей и метод моментов](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%202.%20Метод%20дискретных%20диполей%20и%20метод%20моментов.ipynb)
-3. [T-матрица Уотермана и метод продолженных граничных условий](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%203.%20Т-матрица%20Уотермана%20и%20метод%20продолжнных%20граничных%20условий.ipynb)
-4. [Многочастичное рассеяние](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%204.%20Многочастичное%20рассеяние.ipynb)
-5. [Задания](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн.%20Задания.ipynb)
+1. [Рассеяния электромагнитных волн: общие сведения](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%201.%20Общие%20сведения.ipynb)
+2. [Метод дискретных диполей и метод моментов](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%202.%20Метод%20дискретных%20диполей%20и%20метод%20моментов.ipynb)
+3. [T-матрица Уотермана и метод продолженных граничных условий](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%203.%20Т-матрица%20Уотермана%20и%20метод%20продолжнных%20граничных%20условий.ipynb)
+4. [Многочастичное рассеяние](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн%204.%20Многочастичное%20рассеяние.ipynb)
+5. [Задания](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Рассеяниие%20электромагнитных%20волн.%20Задания.ipynb)
 
 ### Обратные и оптимизационные задачи
 
-1. [Градиентные методы и adjoint метод](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи%201.%20Методы%20градиентного%20спуска.ipynb)
-2. [Стохастическая оптимизация](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи%202.%20Методы%20стохастической%20оптимизации.ipynb)
-3. [Методы глубокого обучения в фотонике](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи%203.%20Методы%20глубокого%20обучения.ipynb)
-4. [Задания](https://github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи.%20Задания.ipynb)
+1. [Градиентные методы и adjoint метод](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи%201.%20Методы%20градиентного%20спуска.ipynb)
+2. [Стохастическая оптимизация](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи%202.%20Методы%20стохастической%20оптимизации.ipynb)
+3. [Методы глубокого обучения в фотонике](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи%203.%20Методы%20глубокого%20обучения.ipynb)
+4. [Задания](https://nbviewer.org/github.com/aashcher/ANMOP/blob/main/nb_ru/Обратные%20и%20оптимизационные%20задачи.%20Задания.ipynb)
