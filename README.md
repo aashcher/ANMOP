@@ -20,10 +20,10 @@ The course is divided into blocks that can be studied relatively independently o
 
 ### Photonic Crystals
 
-1. Photonic Crystals: Prperties and Applications
-2. Modal Basis for 1D Crystals
-3. Fourier Space Methods
-4. Tasks
+1. [Photonic Crystals: Prperties and Applications](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Photonic%20crystals%201.%20General%20properties%20and%20applications.ipynb)
+2. [Modal Basis for 1D Crystals](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Photonic%20crystals%202.%20Modal%20basis%20in%201D%20case.ipynb)
+3. [Fourier Space Methods](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Photonic%20crystals%203.%20Fourier%20method.ipynb)
+4. [Tasks](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Photonic%20crystals.%20Tasks.ipynb)
 
 ### Diffraction Gratings and Metasurfaces
 
