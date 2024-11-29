@@ -17,12 +17,8 @@ def plot_1D_PhC_dispersion(eps1 : float, eps2 : float, d1 : float, d2 : float, \
     n : number of positive Fourier harmonics (total number of harmonics is 2n+1)
     nb : number of bands to calculate
     '''
-#    eps1 = 1 # permittivity of the first layer
-#    eps2 = 4 # permittivity of the second layer
     period = d1 + d2 # period in length units
-#    k = 0.1 # Bloch wavevector
 
-#    n = 5 # number of positive Fourier harmonics (total number is 2n+1)
     N = 2*n # number of positive Fourier harmonics for epsilon decomposition
 
     nrow = np.linspace(-n, n, 2*n+1)
@@ -35,12 +31,11 @@ def plot_1D_PhC_dispersion(eps1 : float, eps2 : float, d1 : float, d2 : float, \
       # epsilon Fourier matrix:
     FM = toeplitz(fv_eps[N:], fv_eps[N::-1])
 
-#    nb = 4 # number of bands to calculate
     kv = np.arange(0, 0.5, 0.001, dtype=float) # Bloch k-vectors in the units of pi/Lambda
     bands = np.zeros((kv.size, nb), dtype=float)
 
-    # loop over k-space points:
-    for ik in range(0, kv.size): # kv.size
+      # loop over k-space points ans solutions of the eigenvalue problem:
+    for ik in range(0, kv.size):
         A = np.diag((kv[ik] + nrow)**2)
         eigenval, eigenvect = eig(A, FM)
         eigenval = np.sqrt(eigenval)
@@ -51,7 +46,6 @@ def plot_1D_PhC_dispersion(eps1 : float, eps2 : float, d1 : float, d2 : float, \
       # plot the PhC band diagram
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif')
-    #fig, ax = plt.subplots()
     for ib in range(0, nb):
         plt.plot(kv, bands[:,ib], color='blue')
 

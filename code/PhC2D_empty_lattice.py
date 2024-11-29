@@ -10,16 +10,23 @@ import matplotlib
 import matplotlib.pyplot as plt
 
   # dispersion function for 2D empty lattice crystal:
-def dispersion(kx, ky, m1, m2, K1, K2):
+def dispersion(kx : np.ndarray, ky: np.ndarray, m1 : int, m2 : int, K1 : float, K2 : float) -> np.ndarray:
+    '''
+    kx, ky: projections of the Bloch wavevector for a given set of Bloch wavevectors
+    m1, m2: integers defining a particular band
+    K1, K2: two-float lists defining the reciprocal lattice vectors
+    '''
     return np.sqrt((kx + m1*K1[0] + m2*K2[0])**2 + (ky + m1*K1[1] + m2*K2[1])**2)
 
-def plot_empty_lattice_dispersion():
-    period = 1
-    nump = 20 # number of points in each segment
+def plot_empty_lattice_dispersion_2D():
+    period = 1 # period in length units
+    nump = 20 # number of points in each segment of the dispersion diagram to plot
 
-    K_sqr = 2*np.pi/period
-    K_hex = 4*np.pi/period/np.sqrt(3)
+      # moduli of the reciprocal lattice vectors
+    K_sqr = 2*np.pi/period # for the square lattice
+    K_hex = 4*np.pi/period/np.sqrt(3) # for the hexagonal lattice
 
+      # reciprocal lattice vectors
     K1_sqr = [K_sqr, 0]
     K2_sqr = [0, K_sqr]
     K1_hex = [0.5*K_hex, 0.5*np.sqrt(3)*K_hex]
@@ -27,6 +34,7 @@ def plot_empty_lattice_dispersion():
 
     cw = 1/K_sqr # frequency normalization coefficient
 
+      # plotting parameters
     plt.rcParams['text.usetex'] = True
     font = {'family' : 'normal', 'weight' : 'bold', 'size'   : 22}
     matplotlib.rc('font', **font)
@@ -34,45 +42,47 @@ def plot_empty_lattice_dispersion():
 
     fig, (ax_sqr, ax_hex) = plt.subplots(1, 2)
 
+      # highlight symmetry points for the square lattice:
     ax_sqr.plot([0, 0], [0, 5], color="grey", linestyle='dashed') # Gamma-point
     ax_sqr.plot([0.5*K_sqr, 0.5*K_sqr], [0, 5], color="grey", linestyle='dashed') # X-point
-
+      # highlight symmetry points for the hexagonal lattice:
     ax_hex.plot([0, 0], [0, 5], color="grey", linestyle='dashed') # Gamma-point
     ax_hex.plot([K_hex/np.sqrt(3), K_hex/np.sqrt(3)], [0, 5], color="grey", linestyle='dashed') # K-point
 
+      # loop over the bands:
     for m1 in range(-3,3):
         for m2 in range(-3,3):
-            # square MG line
+              # square lattice M->G line
             x = np.linspace(0, 0.5*np.sqrt(2)*K_sqr, nump) - 0.5*np.sqrt(2)*K_sqr
             y = cw * dispersion(np.linspace(0.5*K_sqr, 0, nump), 
                                 np.linspace(0.5*K_sqr, 0, nump), 
                                 m1, m2, K1_sqr, K2_sqr)
             ax_sqr.plot(x, y, color="blue")
-            # square GX line
+              # square lattice G->X line
             x = np.linspace(0, 0.5*K_sqr, nump)
             y = cw * dispersion(np.linspace(0, 0.5*K_sqr, nump), 
                                 0, m1, m2, K1_sqr, K2_sqr)
             ax_sqr.plot(x, y, color="blue")
-            # square XM line
+            # square lattice X->M line
             x = 0.5*K_sqr + np.linspace(0, 0.5*K_sqr, nump)
             y = cw * dispersion(0.5*K_sqr, 
                                 np.linspace(0, 0.5*K_sqr, nump), 
                                 m1, m2, K1_sqr, K2_sqr)
             ax_sqr.plot(x, y, color="blue")
             
-            # hexagonal MG line
+            # hexagonal lattice M->G line
             x = np.linspace(-0.5*K_hex, 0, nump)
             y = cw * dispersion(np.linspace(0.5*K_hex, 0, nump), 
                                 0,
                                 m1, m2, K1_hex, K2_hex)
             ax_hex.plot(x, y, color="blue")
-            # hexagonal GK line
+            # hexagonal lattice G->K line
             x = np.linspace(0, K_hex/np.sqrt(3), nump)
             y = cw * dispersion(np.linspace(0, 0.5*K_hex, nump), 
                                 np.linspace(0, 0.5*K_hex/np.sqrt(3), nump),
                                 m1, m2, K1_hex, K2_hex)
             ax_hex.plot(x, y, color="blue")
-            # hexagonal KM line
+            # hexagonal lattice K->M line
             x = np.linspace(0, 0.5*K_hex/np.sqrt(3), nump) + K_hex/np.sqrt(3)
             y = cw * dispersion(0.5*K_hex, 
                                 np.linspace(0.5*K_hex/np.sqrt(3), 0, nump), 
@@ -94,5 +104,8 @@ def plot_empty_lattice_dispersion():
     fig.set_figheight(10)
     fig.set_figwidth(20)
 
+    plt.show()
+    pass
+
 if __name__ == "__main__" and __package__ is None:
-    plot_empty_lattice_dispersion()
+    plot_empty_lattice_dispersion_2D()
