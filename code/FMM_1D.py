@@ -4,15 +4,11 @@
 
 #==================================================================================================
 
-# Imports
-
 import numpy as np
 from scipy.linalg import toeplitz, eig, inv, solve
 from dataclasses import dataclass
 
 #==================================================================================================
-
-# Classes
 
 @dataclass
 class DiffractionGratingProblem:
@@ -28,6 +24,7 @@ class DiffractionGratingProblem:
     ## angle of incidence in degrees, float
     angle_incidence: float = 0
     kx_inc: float = 0
+    # permittivities of media above an below the grating slab:
     epsilon_substrate: float = 1
     epsilon_superstrate: float = 1
     def __init__(self, wavelength: float, polarization: str, angle_incidence: float, \
@@ -79,7 +76,7 @@ class PhotonicCrystalSlab():
 class FourierMethod():
     def __init__(self, number_harmonics: int = 1) -> None:
         self.number_harmonics = number_harmonics
-        self.central_harmonic = int((self.number_harmonics)/2)
+        self.central_harmonic = int((self.number_harmonics)/2) # index corresponding to the zero diffraction order
         pass
 
     def get_kx(self, kx_inc: float, Kg: float) -> np.ndarray:
@@ -133,8 +130,8 @@ class FourierMethod():
     
     def diffract(self, S: np.ndarray, V_in: np.ndarray) -> np.ndarray:
         V_out = np.zeros_like(V_in, dtype=complex)
-        V_out[0,:] = S[0,0,:,:] @ V_in[0,None,:] + S[0,1,:,:] @ V_in[1,None,:]
-        V_out[1,:] = S[1,0,:,:] @ V_in[0,None,:] + S[1,1,:,:] @ V_in[1,None,:]
+        V_out[0,:] = S[0,0,:,:] @ V_in[0,:] + S[0,1,:,:] @ V_in[1,:]
+        V_out[1,:] = S[1,0,:,:] @ V_in[0,:] + S[1,1,:,:] @ V_in[1,:]
         return V_out
 
     def plane_wave(self, direction: str) -> np.ndarray:
@@ -167,13 +164,7 @@ class FourierMethod():
             V_eff[1,:] = np.abs(V_out[1,:]**2) * (kz_sup[:] / problem.epsilon_superstrate).real
 
         return (V_eff / P_in)
-'''
-    def get_layer_field(self, problem: DiffractionGratingProblem, \
-                        V: np.ndarray, epsilon: complex, nx: int, nz: int) -> np.ndarray:
-        kx = 
-        kz = kz = self.get_kz(kx, epsilon)
-        return
-''' 
+
 #==================================================================================================
 
 class FourierModalMethod(FourierMethod):
@@ -251,7 +242,7 @@ class FourierModalMethod(FourierMethod):
         S[1,0,ind1,ind1] = M1[ind2,ind1]
         S[1,1,ind1,ind1] = M1[ind2,ind2]
 
-        return S, betas, M2, E_eig, H_eig
+        return S
 
     def phc_interface_tmatrix(self, problem: DiffractionGratingProblem, E_eig: np.ndarray, H_eig: \
                               np.ndarray, kx: np.ndarray, epsilon: complex) -> np.ndarray:
@@ -278,34 +269,30 @@ class FourierModalMethod(FourierMethod):
 
 ###################################################################################################
 
-"""! Main program entry."""
+if __name__ == "__main__" and __package__ is None:
+    wavelength = 0.632
+    polarization = 'p'
+    angle_incidence = 15
+    epsilon_substrate = 2.25
+    epsilon_superstrate = 1
 
-wavelength = 0.632
-polarization = 'p'
-angle_incidence = 15
-epsilon_substrate = 2.25
-epsilon_superstrate = 1
+    problem = DiffractionGratingProblem(wavelength, polarization, angle_incidence, epsilon_substrate, epsilon_superstrate)
 
-problem = DiffractionGratingProblem(wavelength, polarization, angle_incidence, epsilon_substrate, epsilon_superstrate)
+    number_harmonics = 15
+    fmm = FourierModalMethod(number_harmonics)
 
-number_harmonics = 15
-fmm = FourierModalMethod(number_harmonics)
+    period = 0.8
+    fill_factors = np.array([0.4, 0.6], dtype=float)
+    phc_epsilons = np.array([1, 12], dtype=complex)
+    slab_thickness = 0.4
+    grating = PhotonicCrystalSlab(period, fill_factors, phc_epsilons, slab_thickness)
 
-period = 0.8
-fill_factors = np.array([0.4, 0.6], dtype=float)
-phc_epsilons = np.array([1, 12], dtype=complex)
-slab_thickness = 0.4
-grating = PhotonicCrystalSlab(period, fill_factors, phc_epsilons, slab_thickness)
+    # calculation of diffraction efficiencies:
+    S = fmm.get_smatrix_phc_slab(problem, grating)
+    V_in = fmm.plane_wave('from above')
+    V_out = fmm.diffract(S, V_in)
+    V_eff = fmm.get_efficiencies(V_in, V_out, problem, grating)
+    print(V_eff.T)
+    print(np.sum(V_eff))
 
-  # calculation of diffraction efficiencies:
-S = fmm.get_smatrix_phc_slab(problem, grating)
-V_in = fmm.plane_wave('from above')
-V_out = fmm.diffract(S, V_in)
-V_eff = fmm.get_efficiencies(V_in, V_out, problem, grating)
-print(V_eff.T)
-
-  # near field calculation:
-S, betas, M, E_eig, H_eig = fmm.get_smatrix_phc_slab(problem, grating)
-V_in = fmm.plane_wave('from above')
-V_out = fmm.diffract(S, V_in)
 

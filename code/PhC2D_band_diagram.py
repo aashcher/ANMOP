@@ -39,8 +39,8 @@ class PhotonicCrystal2DCyl:
             self.K2 = np.array([0.0, 1.0])
         elif lattice_type == "hexagonal":
             self.fill_fact = (2*np.pi/np.sqrt(3.0)) * radius**2 / period**2 # volume fraction occupied by the cylinders
-            self.K1 = np.array([0.5, 0.5*np.sqrt(3.0)])
-            self.K2 = np.array([0.5, -0.5*np.sqrt(3.0)])
+            self.K1 = np.array([0.5, -0.5*np.sqrt(3.0)])
+            self.K2 = np.array([0.5, 0.5*np.sqrt(3.0)])
         pass
 
     def calc_reciprocal_lattice(self, n_harm, k_bloch):
@@ -65,30 +65,21 @@ class PhotonicCrystal2DCyl:
         h_harm: total number of Fourier harmonics to calculate in one dimension
         '''
         rp = self.radius / self.period
+        if self.lattice_type == 'square':
+            C1 = 2.0*np.pi
+            C2 = 0.0
+        elif self.lattice_type == 'hexagonal':
+            C1 = 4.0*np.pi/np.sqrt(3.0)
+            C2 = 0.5
 
         FM = np.zeros([2*n_harm-1, 2*n_harm-1], dtype=float)
 
-        # I1, I2 = np.meshgrid(np.linspace(0, n_harm-1, n_harm), np.linspace(0, n_harm-1, n_harm))	
-        # tF = 2.0*np.pi*rp*np.sqrt((self.K1[0]*I1 + self.K2[0]*I2)**2 + (self.K1[1]*I1 + self.K2[1]*I2)**2)
-        # ind = np.abs(tF) > 1.0e-8
-        # tF[ind] = 2.0 * jv(1,tF[ind]) / tF[ind]
-        # tF[~ind] = 1.0
-        # FM[n_harm-1:,n_harm-1:] = tF
-        # FM[n_harm-1::-1,n_harm-1::-1] = tF
-
-        # tF = 2.0*np.pi*rp*np.sqrt((self.K1[0]*I1 - self.K2[0]*I2)**2 + (self.K1[1]*I1 - self.K2[1]*I2)**2)
-        # ind = np.abs(tF) > 1.0e-8
-        # tF[ind] = 2.0 * jv(1,tF[ind]) / tF[ind]
-        # tF[~ind] = 1.0
-        # FM[n_harm:,n_harm-2::-1] = tF[1:,1:]
-        # FM[n_harm-2::-1,n_harm:] = tF[1:,1:]
-
         I1, I2 = np.meshgrid(np.linspace(-n_harm+1, n_harm-1, 2*n_harm-1), np.linspace(-n_harm+1, n_harm-1, 2*n_harm-1))	
-        tF = 2.0*np.pi*rp*np.sqrt((self.K1[0]*I1 + self.K2[0]*I2)**2 + (self.K1[1]*I1 + self.K2[1]*I2)**2)
+        tF = C1*rp*np.sqrt(I1**2 + I2**2 - 2.0*C2*I1*I2)
         ind = np.abs(tF) > 1.0e-8
-        tF[ind] = 2.0 * jv(1,tF[ind]) / tF[ind]
-        tF[~ind] = 1.0
-        FM = self.fill_fact * (1.0/self.eps_cyl - 1.0/self.eps_med) * tF
+        tF[ind] = C1*(rp**2)*jv(1, tF[ind]) / tF[ind]
+        tF[~ind] = 0.5*C1*(rp**2)
+        FM = (1.0/self.eps_cyl - 1.0/self.eps_med) * tF
         FM[n_harm-1, n_harm-1] += 1.0/self.eps_med
 
         return FM
@@ -111,16 +102,16 @@ class PhotonicCrystal2DCyl:
 
 def plot_circular_PhC_dispersion_2D():
       # parameters:
-    radius = 0.48 # radius of cylinders
+    radius = 0.3 # radius of cylinders
     period = 1 # period (P > 2R)
     eps_cyl = 1.0 # permittivity of cylinders
-    eps_med = 1.0 # permittivity of the surrounding medium
+    eps_med = 3.478**2 # permittivity of the surrounding medium
     lattice_type = 'hexagonal' # either "square" or "hexagonal"
 
     polarization = 'TE' # % polarization
-    n_harm = 15 # number of Fourier harmonics in one dimension
+    n_harm = 25 # number of Fourier harmonics in one dimension
 
-    n_band = 5 # set the number of bands to calculate:
+    n_band = 6 # set the number of bands to calculate:
 
       # initialization of the band diagram calculation:
     npt = 15 # number of points in each segment of the dispersion diagram to plot
@@ -157,11 +148,12 @@ def plot_circular_PhC_dispersion_2D():
 
     data_band = np.zeros((n_band, ntot), dtype=float); # array to store the data
     for k in range(0, ntot):
+        print(k, ntot)
           # set of the reciprocal lattice points:
         crystal.calc_reciprocal_lattice(n_harm, k_points[k,:])
         M = crystal.get_eig_mat(n_harm, polarization, T)
         eigval, eigvect = eig(M)
-        eigval = (np.sqrt(eigval.flat))[np.real(eigval) > 1.0e-12]
+        eigval = (np.sqrt(eigval.flat))[np.real(eigval) > -1.0e-12]
         indices_sorted = np.argsort(np.real(eigval))
         W = eigval.flat[indices_sorted]
         data_band[:,k] = np.real(W[0:n_band])
