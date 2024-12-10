@@ -102,14 +102,14 @@ class PhotonicCrystal2DCyl:
 
 def plot_circular_PhC_dispersion_2D():
       # parameters:
-    radius = 0.3 # radius of cylinders
+    radius = 0.18 # radius of cylinders
     period = 1 # period (P > 2R)
-    eps_cyl = 1.0 # permittivity of cylinders
-    eps_med = 3.478**2 # permittivity of the surrounding medium
-    lattice_type = 'hexagonal' # either "square" or "hexagonal"
+    eps_cyl = 11.56 # permittivity of cylinders
+    eps_med = 1 # permittivity of the surrounding medium
+    lattice_type = 'square' # either "square" or "hexagonal"
 
-    polarization = 'TE' # % polarization
-    n_harm = 25 # number of Fourier harmonics in one dimension
+    polarization = 'TM' # % polarization
+    n_harm = 21 # number of Fourier harmonics in one dimension
 
     n_band = 6 # set the number of bands to calculate:
 
@@ -157,8 +157,6 @@ def plot_circular_PhC_dispersion_2D():
         indices_sorted = np.argsort(np.real(eigval))
         W = eigval.flat[indices_sorted]
         data_band[:,k] = np.real(W[0:n_band])
-        #print(np.real(eigval.flat[indices_sorted]))
-        #input()
 
       # plot the band diagram:
     plt.rc('text', usetex=True)
