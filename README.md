@@ -27,22 +27,22 @@ The course is divided into blocks that can be studied relatively independently o
 
 ### Diffraction Gratings and Metasurfaces
 
-1. Gratings: Properties and Applications
-2. Modal Methods
-3. Resonant Properties
+1. [Gratings: Properties and Applications](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Diffraction%20gratings%201.%20Introduction%20and%20applications.ipynb)
+2. [Modal Methods](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Diffraction%20gratings%202.%20Modal%20methods.ipynb)
+3. [Resonant Properties](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Diffraction%20gratings%203.%20Resonant20properties.ipynb)
 4. Tasks
 
 ### Electromagnetic Scattering
 
-1. Scattering of Electromagnetic Waves: Overview
-2. The Discarete Dipole Approximation and Method of Moments
-3. Waterman T-matrix and the Extended Boundary Condition Method
-4. Multiple Scattering
-5. Tasks
+1. [Scattering of Electromagnetic Waves: Overview](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Electromagnetic%20scattering%201.%20Introduction.ipynb)
+2. [The Discarete Dipole Approximation and Method of Moments](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Electromagnetic%20scattering%202.%20Discrete%20dipole%20approximation.ipynb)
+3. [Waterman T-matrix and the Extended Boundary Condition Method](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Electromagnetic%20scattering%203.%20Waterman%20T-matrix%20and%20the%20Extended%20Boundary%20Condition%20Method.ipynb)
+4. [Multiple Scattering](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Electromagnetic%20scattering%204.%20Multiple%20scattering.ipynb)
+5. [Tasks]()
 
 ### Inverse and Optimization Problems
 
-1. Gradient-Based Optimization and the Adjoint Method
-2. Stochastic Optimization
-3. Deep Learning Approaches
-4. Tasks
+1. [Gradient-Based Optimization and the Adjoint Method](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Inverse%20design%201.%20Adjoint%20method%20method%20and%20gradient%20descent.ipynb)
+2. [Stochastic Optimization](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Inverse%20design%202.%20Stochastic%20optimization.ipynb)
+3. [Deep Learning Approaches](https://nbviewer.org/github/aashcher/ANMOP/blob/main/nb_en/Inverse%20design%203.%20Deep%20neural%20networks.ipynb)
+4. [Tasks]()
